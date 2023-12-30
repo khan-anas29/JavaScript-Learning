@@ -1,15 +1,32 @@
-function sample(){
-    var a="3"
-    var b="8"
+// // String Concatination
+// var greet="Hello"
+// var myName="Anas"
 
-    // Do not change the line above
-    // Write your code on line 7-9
-    var temp=a;
-    a=b;
-    b=temp;
-    // Do no change the line below
-    console.log("a is "+ a);
-    console.log("b is "+ b);
-}
+// console.log(greet,myName);
+// console.log(greet+myName);
 
-sample()
+
+// String Length
+
+// console.log(myName.length);
+
+// var maxText=180;
+
+// var tweet=prompt("Enter your tweet")
+// var remainText=maxText-(tweet.length)
+
+// console.log("You have "+remainText+ "out of 180 left");
+
+
+// Slicing and Extracting
+// variable.slice(start,end)
+
+
+// var tweet="ASHdjhasjdhjadsjansdjjahsahsfjkhjfdjdkfnjkashdjkahdsjknkncjhsdkjfhakjshdlasASHdjhasjdhjadsjansdjjahsahsfjkhjfdjdkfnjkashdjkahdsjknkncjhsdkjfhakjshdlas"
+// var maxlen=80
+// console.log(tweet.slice(0,maxlen)+" This is your tweet which has only 80 characters outof " + tweet.length);
+
+// var tweetUnderMax= tweet.slice(0,maxlen)
+// console.log(tweetUnderMax);
+
+
