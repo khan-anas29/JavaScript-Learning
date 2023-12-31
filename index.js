@@ -1,12 +1,10 @@
-// Input from User
-var name="aNas KhaN"
-// getting first word and making it upper case
-var firstWord= name.slice(0,1)
-firstWord=firstWord.toUpperCase()
+//Arithmetic Operators
+/*Dog age to Human Age Fromula
+humanAge =(dogAge-2)*4 +21 */
 
-// getting restword and making it lower case
-var remainWord = name.slice(1,name.length)
-remainWord=remainWord.toLowerCase()
+// take input from user but i am specifying
+var dogAge=1
+var humanAge;
+humanAge=((dogAge-2)*4) +21
 
-// Output
-console.log("Hello,"+firstWord+remainWord);
+console.log("The respective age for dogAge of " +dogAge+" is "+humanAge);
