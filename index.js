@@ -1,10 +1,19 @@
-//Arithmetic Operators
-/*Dog age to Human Age Fromula
-humanAge =(dogAge-2)*4 +21 */
+// KarelChallenge for Functions
+/* Put beaker in 5*5 diagonal */
 
-// take input from user but i am specifying
-var dogAge=1
-var humanAge;
-humanAge=((dogAge-2)*4) +21
-
-console.log("The respective age for dogAge of " +dogAge+" is "+humanAge);
+function main(){
+    putBeeper();
+  move();
+    second();
+    second();
+    second();
+    second();
+ }
+ 
+ function second(){
+    turnLeft();
+    move();
+    putBeeper();
+    turnRight();
+    move();
+ }
