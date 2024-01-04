@@ -11,7 +11,12 @@ function loveCal() {
     var num=Math.random() * 100
     num=Math.floor(num)
     num=num+1
-    console.log(num+"%");
+    if (num>70) {
+        console.log(num+"%, You Love Each other very much");
+        
+    } else {
+        console.log(num+"%");
+    }
 }
 
 loveCal()
