@@ -13,9 +13,12 @@ function loveCal() {
     num=num+1
     if (num>70) {
         console.log(num+"%, You Love Each other very much");
-        
-    } else {
+    } 
+    if (num>30 && num<=70) {
         console.log(num+"%");
+    }
+    if(num <= 30){
+        console.log(num+"%, You Love Each other like Oil & water");
     }
 }
 
