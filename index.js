@@ -1,25 +1,26 @@
-// Random Number Generator
+// BMi using If Else
 /*
-Creating Fun Love calculator random generating numbers */
+Bmi=weight/height*height */
 
 // Take 2 inputs from user
-var name1;
-var name2;
 
-function loveCal() {
-    // We need in range of 1 to 100
-    var num=Math.random() * 100
-    num=Math.floor(num)
-    num=num+1
-    if (num>70) {
-        console.log(num+"%, You Love Each other very much");
-    } 
-    if (num>30 && num<=70) {
-        console.log(num+"%");
+var weight;
+var height;
+
+function CalcBMI(weight,height){
+
+    var BMI=Math.round(weight/(height*height))
+
+    if(BMI < 18.5){
+        return `Your BMI is ${BMI}, You are Under weight`
     }
-    if(num <= 30){
-        console.log(num+"%, You Love Each other like Oil & water");
+    if(BMI>=18.5 && BMI<=24.9){
+        return `Your BMI is ${BMI}, You are Normal weight`
+    }
+    if(BMI>24.9){
+        return `Your BMI is ${BMI}, You are Over weight`
     }
 }
 
-loveCal()
+var bmiValue=CalcBMI(75,1.8)
+console.log(bmiValue);
