@@ -1,26 +1,33 @@
-// BMi using If Else
+// Leap Year Challenge
 /*
-Bmi=weight/height*height */
+year is a leap if it is clearly divisible by 4 unless it is not divisible by 100 and if also divisible by 100 then should be divisible by 400
+ */
 
-// Take 2 inputs from user
+// Take input
 
-var weight;
-var height;
+var year;
 
-function CalcBMI(weight,height){
-
-    var BMI=Math.round(weight/(height*height))
-
-    if(BMI < 18.5){
-        return `Your BMI is ${BMI}, You are Under weight`
+function isLeap(year){
+    if (year%4===0) {
+        if (year%100===0) {
+            if(year%400===0){
+                console.log("Leap Year");
+            }
+            else{
+                console.log("Not a Leap Year");
+            }
+        } else {
+            console.log("Leap Year");
+        }
     }
-    if(BMI>=18.5 && BMI<=24.9){
-        return `Your BMI is ${BMI}, You are Normal weight`
-    }
-    if(BMI>24.9){
-        return `Your BMI is ${BMI}, You are Over weight`
+    else{
+        console.log("Not a Leap Year");
     }
 }
 
-var bmiValue=CalcBMI(75,1.8)
-console.log(bmiValue);
+isLeap(2004);
+isLeap(2013);
+isLeap(2022);
+isLeap(2024);
+isLeap(2100);
+
