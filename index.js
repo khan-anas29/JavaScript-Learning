@@ -1,24 +1,22 @@
 // Fibonacci Challenge
-var firstnum = 0;
-var secondnum = 1;
-
-var output = []
-
-function FibonacciSeries(n) {
-    for (var i = 0; i < n; i++) {
-        if (i === 0) {
-            output.push(firstnum)
-        }
-        else if (i === 1) {
-            output.push(secondnum)
-        }
-        else{
-            thirdnum=([i-2]+[i-1])
-            output.push(thirdnum)
+function CalcFib(n) {
+    if (n===1){
+        output=[0]
+    }
+    else if(n===2){
+        output=[0,1]
+    }
+    else{
+        output=[0,1]
+        for (i = 2; i < n; i++){
+            // Calculate sum of previous two
+           output.push(output[output.length-1]+output[output.length-2])
         }
     }
-    console.log(output);
+    return output
 }
 
-FibonacciSeries(5)
-FibonacciSeries(3)
+var a=CalcFib(5)
+console.log(a);
+var b=CalcFib(10)
+console.log(b);
