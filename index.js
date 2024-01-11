@@ -1,22 +1,31 @@
 // Fibonacci Challenge
+
+
+
 function CalcFib(n) {
+    var t1=0;
+    var t2=1;
+    var t3;
+    var output=[];
     if (n===1){
-        output=[0]
+        output=[t1]
     }
     else if(n===2){
-        output=[0,1]
+        output=[t1,t2]
     }
     else{
-        output=[0,1]
+        output=[t1,t2]
         for (i = 2; i < n; i++){
-            // Calculate sum of previous two
-           output.push(output[output.length-1]+output[output.length-2])
+            t3=t1+t2
+            t1=t2
+            t2=t3
+            output.push(t3)
         }
     }
     return output
 }
 
-var a=CalcFib(5)
+var a=CalcFib(10)
 console.log(a);
 var b=CalcFib(10)
 console.log(b);
