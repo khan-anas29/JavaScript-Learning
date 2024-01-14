@@ -1,20 +1,24 @@
-// Higher Order Function
+// Objects
 
-function add(num1,num2){
-    return num1 + num2
+var student1={
+    name: 'Anas',
+    age:20,
+    branch:"Ai&Ds",
+}
+var student2={
+    name: 'Shahrukh',
+    age:20,
+    branch:"Comps",
 }
 
-function subtract(num1,num2){
-    return num1 - num2
+// Constructor Function
+
+function Student(name,age,branch){
+    this.name=name,
+    this.age=age,
+    this.branch=branch
 }
 
-function multiply(num1,num2){
-    return num1 * num2
-}
+// creating new object directly by constructor function
 
-function divide(num1,num2){
-    return num1 / num2
-}
-
-function calculator(num1,num2,operator){
-    return operator(num1,num2)}
+var student3 = new Student("Salman","25","Driving")
