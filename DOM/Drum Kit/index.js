@@ -11,6 +11,7 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
         var buttonInnerHTMl = this.innerHTML
         
         makeSound(buttonInnerHTMl)
+        buttonAnimation(buttonInnerHTMl)
     })
 }
 
@@ -18,8 +19,11 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
 // Detecting which key is pressed on Keyboard
 document.addEventListener("keypress",function(event){
     makeSound(event.key)
+    buttonAnimation(event.key)
 })
 
+
+// Detecting Which is beign clicked/press
 function makeSound(value){
     // Choosing what to play as what is selected
     switch (value) {
@@ -63,4 +67,18 @@ function makeSound(value){
             console.log(value);
             break;
     }
+}
+
+// Adding Animation to Website
+function buttonAnimation(currentkey){
+    // selecting class based on w,a,s,d
+    var activebtn=document.querySelector("."+ currentkey);
+
+    // adding predefined css class for animation
+    activebtn.classList.add("pressed")
+    
+    setTimeout(function () {
+        // removing it after 0.1s to make animation proper
+        activebtn.classList.remove("pressed")
+    },100)
 }
