@@ -18,3 +18,12 @@
 $("h1").addClass("big-text")
 $("button").addClass("btn")
 
+// Manipulating Text
+/* .innerHTML ==> html() in jQuery */
+
+$("button").text("Click Me")
+$("h1").html("<em>Hello</em>")
+
+// Manipulating Attributes
+$("a").attr("href","https://www.youtube.com")
+
