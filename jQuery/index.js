@@ -60,3 +60,14 @@ $(document).keypress(function(event){
 $("h1").on("click",function(){
     $("h1").addClass("big-text-bg")
 })
+
+/*
+Result of this is store in a Image
+$("h1").before("<button>NEW</button>")
+jQuery.fn.init {0: h1.big-text, length: 1, prevObject: j…y.fn.init}
+$("h1").after("<button>NEW</button>")
+jQuery.fn.init {0: h1.big-text, length: 1, prevObject: j…y.fn.init}
+$("h1").prepend("<button>NEW</button>")
+jQuery.fn.init {0: h1.big-text, length: 1, prevObject: j…y.fn.init}
+$("h1").append("<button>NEW</button>")
+jQuery.fn.init {0: h1.big-text, length: 1, prevObject: j…y.fn.init}*/
