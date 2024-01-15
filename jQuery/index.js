@@ -1,73 +1,22 @@
-// document.querySelector("h1")
-// // this is same as
-// jQeuery("h1")
-// // which is also same as
-// $("h1"); No difference while selecting one and queryselectorAll in jQuery
+// Website Animation
+
+// $("button").click(function(){
+//     $("h1").hide()
+// })
+
+// $("button").click(function(){
+//     $("h1").fadeOut()
+// })
 
 
-/*Adding css using js is not good practice instead we can add class using this js which had all the css required  */
-
-// $("h1").css("color","green")
-
-// var headingColor=$("h1").css("color");
-// console.log(headingColor);
+// Animate can only have numerical values in curly braces
+// $("button").click(function(){
+//     $("h1").animate({opacity:0.5})
+// })
 
 
-// Adding Css using  jQuery
+// Multiple Animation
+// $("button").click(function(){
+//     $("h1").slideUp().slideDown();
+// })
 
-$("h1").addClass("big-text")
-$("button").addClass("btn")
-
-// Manipulating Text
-/* .innerHTML ==> html() in jQuery */
-
-$("button").text("Click Me")
-$("h1").html("<em>Hello</em>")
-
-// Manipulating Attributes
-$("a").attr("href","https://www.youtube.com")
-
-// Adding Event Listeners
-
-// Manually
-
-/*for(var i=0;i<document.querySelectorAll("button").length;i++){
-    document.querySelectorAll("button")[i].addEventListener("click",function(){
-        document.querySelector("h1").style.color="black"
-    })
-}*/
-
-// With jQuery
-
-$("button").click(function(){
-    $("h1").css("color","black")
-})
-
-
-// Getting Button which is beign pressed
-
-/*document.addEventListener("keypress",function(event){
-    // console.log(event.key); //this will show which key is beign pressed
-})*/ 
-
-$(document).keypress(function(event){
-        $("h1").text(event.key)
-})
-
-
-// Better Method to Add Event Listeners
-
-$("h1").on("click",function(){
-    $("h1").addClass("big-text-bg")
-})
-
-/*
-Result of this is store in a Image
-$("h1").before("<button>NEW</button>")
-jQuery.fn.init {0: h1.big-text, length: 1, prevObject: j…y.fn.init}
-$("h1").after("<button>NEW</button>")
-jQuery.fn.init {0: h1.big-text, length: 1, prevObject: j…y.fn.init}
-$("h1").prepend("<button>NEW</button>")
-jQuery.fn.init {0: h1.big-text, length: 1, prevObject: j…y.fn.init}
-$("h1").append("<button>NEW</button>")
-jQuery.fn.init {0: h1.big-text, length: 1, prevObject: j…y.fn.init}*/
