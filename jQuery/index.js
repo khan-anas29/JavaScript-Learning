@@ -27,3 +27,36 @@ $("h1").html("<em>Hello</em>")
 // Manipulating Attributes
 $("a").attr("href","https://www.youtube.com")
 
+// Adding Event Listeners
+
+// Manually
+
+/*for(var i=0;i<document.querySelectorAll("button").length;i++){
+    document.querySelectorAll("button")[i].addEventListener("click",function(){
+        document.querySelector("h1").style.color="black"
+    })
+}*/
+
+// With jQuery
+
+$("button").click(function(){
+    $("h1").css("color","black")
+})
+
+
+// Getting Button which is beign pressed
+
+/*document.addEventListener("keypress",function(event){
+    // console.log(event.key); //this will show which key is beign pressed
+})*/ 
+
+$(document).keypress(function(event){
+        $("h1").text(event.key)
+})
+
+
+// Better Method to Add Event Listeners
+
+$("h1").on("click",function(){
+    $("h1").addClass("big-text-bg")
+})
