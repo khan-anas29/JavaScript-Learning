@@ -4,6 +4,8 @@ var gamePattern=[]
 // defined colors
 var buttonColors=["red","blue","green","yellow"]
 
+var userClickedPattern=[]
+
 
 // Generate Random Number between 0 and 3
 // function nextSequence() {
@@ -46,6 +48,24 @@ var buttonColors=["red","blue","green","yellow"]
 //             break;
 //     }
 // }
+
+
+// Getting the button which trigger handler after click
+
+
+
+$(".btn").click(function(){
+    
+    // this will give which color is clicked by providing its id
+    var userChosenColor = $(this).attr("id");
+
+    userClickedPattern.push(userChosenColor)
+    // console.log(userChosenColor);
+
+    
+    
+});
+
 
 function nextSequence() {
 
