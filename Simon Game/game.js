@@ -62,7 +62,7 @@ $(".btn").click(function(){
     userClickedPattern.push(userChosenColor)
     // console.log(userChosenColor);
 
-    
+    playSound(userChosenColor);
     
 });
 
@@ -75,6 +75,12 @@ function nextSequence() {
   
     $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
   
-    var audio = new Audio("sounds/" + randomChosenColor + ".mp3");
-    audio.play();
-  }
+    playSound(randomChosenColor)
+
+}
+
+// Making Sound Function
+function playSound(name){
+    var audio= new Audio("sounds/" + name + ".mp3")
+    audio.play()
+}
