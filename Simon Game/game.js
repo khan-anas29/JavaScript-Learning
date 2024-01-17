@@ -13,7 +13,7 @@ var level = 0
 
 $(document).keypress(function(){
     if (!started) {
-        $("#level-title").text("Level"+level)
+        $("#level-title").text("Level:"+level)
         nextSequence()
         started=true
     } 
@@ -32,15 +32,19 @@ $(".btn").click(function(){
 
     playSound(userChosenColor);
     animatePress(userChosenColor);
+    checkAnswer(userClickedPattern.length-1)
     
 });
 
 // generating Next Sequence
 function nextSequence() {
 
-    level++
+    //6. Once nextSequence() is triggered, reset the userClickedPattern to an empty array ready for the next level.
+    userClickedPattern = [];
 
-    $("#level-title").text("Level"+level)
+    level++;
+
+    $("#level-title").text("Level:"+level)
 
     var randomNumber = Math.floor(Math.random() * 4);
 
@@ -72,3 +76,19 @@ function animatePress(currentColor) {
  }
 
 
+
+//  Check Answer
+function checkAnswer(currentLevel){
+    if (userClickedPattern[currentLevel]===gamePattern[currentLevel]) {
+        // console.log("success");
+        // Checking if user has finished pattern or not
+        if(userClickedPattern.length===gamePattern.length){
+            setTimeout(() => {
+                nextSequence()
+            }, 1000);
+        }
+    }
+    else{
+        // console.log("Wrong");
+    }
+}
