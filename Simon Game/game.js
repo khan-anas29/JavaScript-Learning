@@ -26,7 +26,7 @@ $(".btn").click(function(){
     
     // this will give which color is clicked by providing its id
     var userChosenColor = $(this).attr("id");
-
+    
     userClickedPattern.push(userChosenColor)
     // console.log(userChosenColor);
 
@@ -35,6 +35,32 @@ $(".btn").click(function(){
     checkAnswer(userClickedPattern.length-1)
     
 });
+
+
+//  Check Answer
+function checkAnswer(currentLevel){
+    if (userClickedPattern[currentLevel]===gamePattern[currentLevel]) {
+        // console.log("success");
+        // Checking if user has finished pattern or not
+        if(userClickedPattern.length===gamePattern.length){
+            setTimeout(() => {
+                nextSequence()
+            }, 1000);
+        }
+    }
+    else{
+        // console.log("Wrong");
+        playSound("wrong")
+
+        $("body").addClass("game-over");
+        setTimeout(() => {
+            $("body").removeClass("game-over");
+        }, 200);
+        $("#level-title").text("Game Over,Press Any Key To Restart")
+        startOver()
+    }
+}
+
 
 // generating Next Sequence
 function nextSequence() {
@@ -76,19 +102,8 @@ function animatePress(currentColor) {
  }
 
 
-
-//  Check Answer
-function checkAnswer(currentLevel){
-    if (userClickedPattern[currentLevel]===gamePattern[currentLevel]) {
-        // console.log("success");
-        // Checking if user has finished pattern or not
-        if(userClickedPattern.length===gamePattern.length){
-            setTimeout(() => {
-                nextSequence()
-            }, 1000);
-        }
-    }
-    else{
-        // console.log("Wrong");
-    }
-}
+function startOver() {
+    level = 0
+    gamePattern=[]
+    started=false
+  }
