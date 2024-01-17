@@ -1,10 +1,25 @@
-// Empty Array for Game Patterns
-var gamePattern=[]
-
 // defined colors
 var buttonColors=["red","blue","green","yellow"]
 
+// Empty Array for Game Patterns
+var gamePattern=[]
+
 var userClickedPattern=[]
+
+// Initializing it as a false so no key will detect while one is already press
+var started= false;
+
+var level = 0
+
+$(document).keypress(function(){
+    if (!started) {
+        $("#level-title").text("Level"+level)
+        nextSequence()
+        started=true
+    } 
+    
+});
+
 
 // Getting which button is pressed
 $(".btn").click(function(){
@@ -16,16 +31,24 @@ $(".btn").click(function(){
     // console.log(userChosenColor);
 
     playSound(userChosenColor);
+    animatePress(userChosenColor);
     
 });
 
 // generating Next Sequence
 function nextSequence() {
 
+    level++
+
+    $("#level-title").text("Level"+level)
+
     var randomNumber = Math.floor(Math.random() * 4);
+
     var randomChosenColor = buttonColors[randomNumber];
+
     gamePattern.push(randomChosenColor);
-  
+    
+
     $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
   
     playSound(randomChosenColor)
@@ -47,3 +70,5 @@ function animatePress(currentColor) {
         $("."+currentColor).removeClass("pressed");
     }, 100);
  }
+
+
